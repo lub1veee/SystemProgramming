@@ -3,5 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="BudInform/BudInform.vcxproj" />
+  <Project Path="BufSet/BufSet.vcxproj" />
   <Project Path="SystemProgramming/SystemProgramming.vcxproj" />
 </Solution>
