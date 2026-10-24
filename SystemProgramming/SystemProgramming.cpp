@@ -43,7 +43,7 @@ int BufScr()
         NULL)) 
         _cputs("Write console output character failed.\n");
     _getch();
-    if (!SetConsoleActiveScreenBuffer(hStdOutOld))
+    if (!SetConsoleActiveScreenBuffer(hStdOutOld))  
     {
         _cputs("Set old console active screen buffer failed.\n");
         return GetLastError();
@@ -57,7 +57,7 @@ int BufScr()
 
 int BufInform()
 {
-    HANDLE hStdOut; 
+    HANDLE hStdOut;     
     CONSOLE_SCREEN_BUFFER_INFO csbi; 
     hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     if (!GetConsoleScreenBufferInfo(hStdOut, &csbi))
@@ -70,7 +70,8 @@ int BufInform()
     std::cout << "Attributes = " << std::hex << csbi.wAttributes << std::dec << std::endl;
     std::cout << "Window upper corner = " << csbi.srWindow.Left << "," << csbi.srWindow.Top << std::endl;
     std::cout << "Window lower corner = " << csbi.srWindow.Right << ","<< csbi.srWindow.Bottom << std::endl;
-    std::cout << "Maximum number of columns = " << csbi.dwMaximumWindowSize.X << std::endl;<< csbi.dwMaximumWindowSize.Y << std::endl << std::endl;
+    std::cout << "Maximum number of columns = " << csbi.dwMaximumWindowSize.X << std::endl;
+    std::cout << csbi.dwMaximumWindowSize.Y << std::endl << std::endl;
     return 0;
 }
 
